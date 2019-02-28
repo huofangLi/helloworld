@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="helloWorld" class="com.soft1721.spring.hello.HelloWorld"/>
+    <bean id="phone" class="com.soft1721.spring.hello.Phone">
+        <!--<property name="brand" value="小米"/>
+        <property name="brice" value="1499"/>-->
+        <constructor-arg name="brand" value="小米"/>
+        <constructor-arg name="price" value="1499"/>
+    </bean>
+    <bean id="student" class="com.soft1721.spring.hello.Student">
+        <!--配置一个Student类的-->
+        <property name="name" value="Tom"/>
+        <property name="age" value="20"/>
+        <property name="phone" ref="phone"/>
+        <!--<constructor-arg name="name" value="Tom"/>
+        <constructor-arg name="age" value="21"/>
+        <constructor-arg name="phone" ref="phone"/>-->
+    </bean>
+</beans>
